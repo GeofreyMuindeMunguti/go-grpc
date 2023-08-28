@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package sample;
+
+//option go_package="go";
+option go_package = "go/test";
+
+
+message Point {
+  int32 ID = 1;
+  string Name = 2;
+}
+
+message Response {
+  string Name=1;
+}
+
+service TestService {
+  rpc Send(Point) returns (Response) {}
+}
